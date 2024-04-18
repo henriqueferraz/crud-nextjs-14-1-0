@@ -6,6 +6,7 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
+    DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -13,14 +14,9 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
-// Caixa d dialogo para inserir nome e email
+// Caixa de dialogo para inserir nome e email
 
-type Props = {
-    open: boolean
-    onOpenChange: (open: boolean) => void
-}
-
-export const InsertUser = ({ open, onOpenChange }: Props) => {
+export default function InsertUser() {
 
     //Informando variáveis
     const [name, setName] = useState('')
@@ -59,7 +55,15 @@ export const InsertUser = ({ open, onOpenChange }: Props) => {
     }
 
     return (
-        <Dialog open={open} onOpenChange={onOpenChange}>
+        <Dialog>
+            <DialogTrigger asChild>
+                <Button
+                    variant="outline"
+                    className="w-full hover:bg-slate-300"
+                >
+                    Inserir Usuário
+                </Button>
+            </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
                     <DialogTitle>Incluir Usuário</DialogTitle>

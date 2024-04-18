@@ -6,31 +6,16 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { Button } from "@/components/ui/button"
-import { useState } from "react";
-import { InsertUser } from "./checkout/dialog";
-import { UsersList } from "./users/users";
+import InsertUser from "./checkout/dialog";
+import UsersList from "./user/users";
 
 export const TableCrud = () => {
 
-    const [buttonOpen, setButtonOpen] = useState(false)
-
     return (
         <div className=" text-xl">
-            <Button
-                onClick={() => setButtonOpen(true)}
-                className="w-full hover:bg-slate-300"
-                variant="secondary"
-            >
-                Incluir Usuário
-            </Button>
-
             <InsertUser
-                // Inseção de caixa de diálogo
-                open={buttonOpen}
-                onOpenChange={setButtonOpen}
+            // Inserção da chamada para inclusão do usuário
             />
-
             <Table>
                 <TableCaption>A lista dos usuários.</TableCaption>
                 <TableHeader>
@@ -42,11 +27,9 @@ export const TableCrud = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-
                     <UsersList
                     // Inserção da tabela com a lista de usuários
                     />
-
                 </TableBody>
             </Table>
         </div >
