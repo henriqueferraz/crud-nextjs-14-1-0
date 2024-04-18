@@ -1,5 +1,4 @@
 'use client'
-import { Button } from "@/components/ui/button"
 import {
     Dialog,
     DialogContent,
@@ -11,9 +10,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useRouter } from "next/navigation"
-
 import { useState } from "react"
-
+import { Button } from "@/components/ui/button"
 
 // Caixa d dialogo para inserir nome e email
 
@@ -48,6 +46,7 @@ export const InsertUser = ({ open, onOpenChange }: Props) => {
             })
 
             if (res.ok) {
+                window.location.reload()
                 router.push("/")
             } else {
                 throw new Error('Falha na criação do usuário')
@@ -62,23 +61,24 @@ export const InsertUser = ({ open, onOpenChange }: Props) => {
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                    <DialogTitle>Incluir Usuário</DialogTitle>
+                    <DialogDescription>
+                        Inclua o usuário e o e-mail. Clique em salvar para continuar.
+                    </DialogDescription>
+                </DialogHeader>
                 <form onSubmit={handleSubmit}>
-                    <DialogHeader>
-                        <DialogTitle>Incluir Usuário</DialogTitle>
-                        <DialogDescription>
-                            Inclua o usuário e o e-mail. Clique em salvar para continuar.
-                        </DialogDescription>
-                    </DialogHeader>
                     <div className="grid gap-4 py-4">
                         <div className="grid grid-cols-4 items-center gap-4">
                             <Label htmlFor="name" className="text-right">
                                 Nome:
                             </Label>
                             <Input
+                                className="col-span-3"
                                 onChange={(e) => setName(e.target.value)}
                                 value={name}
-                                defaultValue="Insira o nome do usuário"
-                                className="col-span-3"
+                                type="text"
+                                placeholder="Informe o nome do usuário"
                             />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
@@ -86,10 +86,11 @@ export const InsertUser = ({ open, onOpenChange }: Props) => {
                                 E-mail:
                             </Label>
                             <Input
+                                className="col-span-3"
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
-                                defaultValue="email@email.com"
-                                className="col-span-3"
+                                type="email"
+                                placeholder="Informe o e-mail"
                             />
                         </div>
                     </div>
@@ -98,6 +99,6 @@ export const InsertUser = ({ open, onOpenChange }: Props) => {
                     </DialogFooter>
                 </form>
             </DialogContent>
-        </Dialog>
+        </Dialog >
     )
 }
