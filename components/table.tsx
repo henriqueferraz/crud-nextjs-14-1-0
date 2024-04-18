@@ -33,7 +33,7 @@ export const TableCrud = () => {
                 onOpenChange={setButtonOpen}
             />
             <Table>
-                <TableCaption>A lista das ultimas atualizações.</TableCaption>
+                <TableCaption>A lista dos usuários.</TableCaption>
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[20px]">#</TableHead>
@@ -44,7 +44,7 @@ export const TableCrud = () => {
                 </TableHeader>
                 <TableBody>
                     <TableRow>
-                        <TableCell className=" text-xs">1</TableCell>
+                        <TableCell className=" text-sm">1</TableCell>
                         <TableCell>MARIA DA SILVA</TableCell>
                         <TableCell>mariasilva@oi.com.br</TableCell>
                         <TableCell className="flex flex-row justify-end space-x-0.5">
@@ -60,7 +60,7 @@ export const TableCrud = () => {
                         </TableCell>
                     </TableRow>
                     <TableRow>
-                        <TableCell className=" text-xs">2</TableCell>
+                        <TableCell className=" text-sm">2</TableCell>
                         <TableCell>JOSÉ DA SILVA</TableCell>
                         <TableCell>josesilva@oi.com.br</TableCell>
                         <TableCell className="flex flex-row justify-end space-x-0.5">

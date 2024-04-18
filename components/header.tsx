@@ -9,11 +9,11 @@ export const Header = () => {
                 <Logo />
             </div>
             <div className="flex flex-col items-center gap-1 text-xs scroll-py-0">
-                <p>Next versão 14.1.0</p>
                 <p>Tailwindcss 3.3.0</p>
                 <p>Typescript 5</p>
                 <p>Shadcn/UI</p>
-                <p>React Icons 5.0.1</p>
+                <p>React Icons 5.1.0</p>
+                <p>Mongoose 8.3.2</p>
             </div>
         </header>
     )

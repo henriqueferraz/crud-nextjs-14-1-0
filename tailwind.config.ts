@@ -19,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        xs: '0.55rem'
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },

@@ -1,5 +1,5 @@
 export const Logo = () => {
     return (
-        <div className=" text-xl">CRUD Nextjs +Prisma</div >
+        <div className=" text-xl">CRUD NextJS 14.1.0</div >
     )
 }
